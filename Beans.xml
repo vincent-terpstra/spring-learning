@@ -8,10 +8,14 @@
    <!-- default-destroy-method="destroy" -->
    
 
-   <bean id = "helloWorld" class = "com.tutorial.HelloWorld"
+   <bean id = "helloWorld" class = "com.tutorial.HelloWorld">
        <!-- init-method ="init" destroy-method="destroy">-->
        <property name="message" value="Hello World!"/>
    </bean>
+   
+	<bean id = "childBean" class ="com.tutorial.ChildBean" parent ="helloWorld">
+	    <property name = "message2" value="Child Bean"/>
+	</bean>
    
     <!-- Definition for Constructor Dependency Injection bean -->
    <bean id = "constructor" class = "com.tutorial.ConstructorDI">
@@ -19,7 +23,9 @@
    </bean>
 
    <!-- Definition for innerClass bean -->
-   <bean id = "innerClass" class = "com.tutorial.InjectClass"></bean>
+   <bean id = "innerClass" class = "com.tutorial.InjectClass">
+       
+   </bean>
    
    <!--<bean class="com.tutorial.InitHelloWorld"/>-->
 
