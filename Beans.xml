@@ -8,7 +8,7 @@
    <!-- default-destroy-method="destroy" -->
    
 
-   <bean id = "helloWorld" class = "com.tutorial.HelloWorld">
+   <bean id = "helloWorld" abstract = "true">
        <!-- init-method ="init" destroy-method="destroy">-->
        <property name="message" value="Hello World!"/>
    </bean>

@@ -8,8 +8,8 @@ public class MainApp {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		
 		/**/
-		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
-		objA.getMessage();
+		//HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+		//objA.getMessage();
 		
 		ChildBean child = (ChildBean) context.getBean("childBean");
 		child.getMessage();
