@@ -6,8 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.beans.BeansException;
 /**
  * Allows logic before and after a bean is initialized
+ * Run as Main()
  * @author vincent
- *
  */
 public class InitHelloBean implements BeanPostProcessor {
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
