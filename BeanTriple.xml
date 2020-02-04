@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!--  Parent Bean --> 
+   <bean id="abstractBean" abstract = "true">
+        <property name = "message1" value = "Abstract message 1"/>
+        <property name = "message2" value = "Abstract message 2"/>
+    </bean>
+    
+   <!-- Child Bean -->
+    <bean id="tripleBean" class = "com.tutorial.beanInheritance.TripleMessage" parent = "abstractBean" >
+        <property name = "message1" value = "Overwritten message 1"/>
+        <property name = "message3" value = "Child instance message 3"/>
+    </bean>
+   
+	<!-- more beans here please -->
+</beans>
