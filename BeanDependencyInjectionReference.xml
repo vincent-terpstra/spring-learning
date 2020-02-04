@@ -1,0 +1,51 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+    <!-- Constructor-based Dependency Injection -->
+    <!-- public OuterClass(InnerClass inner){...} -->
+    <bean id = "outerClass" class="...">
+        <constructor-arg ref ="innerClass"/><!-- ref // reference to an object -->
+        <!-- Multiple arguments here (Order matters) -->
+    </bean>
+    
+    <bean id = "innerClass" class="..."></bean>
+    
+    <!-- Constructor w/ type -->
+    <!-- public ExampleClass(int year, String name){...} -->
+    <bean id = "exampleBean" class="...">
+        <constructor-arg type = "int" value="2001"/>
+        <constructor-arg type = "java.lang.String" value = "Zara" />
+    </bean>
+    
+    <!-- Using indices -->
+    <bean id="exampleBean" class="...">
+        <constructor-arg index="0" value = "2001"/>
+        <constructor-arg index="1" value = "Zara"/>
+    </bean>
+    
+    <!-- Setter based injection -->
+    <!-- setName(String name){ this.name = name; } -->
+    <!-- setInner(InnerClass inner){ this.inner = inner; } -->
+    <bean id="setterClass" class="...">
+        <property name="name" value = "setter name"/>
+        <property name="inner" ref = "innerClass"/><!-- ref = reference to object -->
+    </bean>
+    
+    <!--  OR  p-namespace -->
+    <bean id="pSetterClass" class="..." 
+        p:name = "setter name" p:inner-ref = "innerClass"/>    
+    </bean>
+    
+	<!--  inner Bean -->
+	<bean id="outerBean" class="...">
+	    <property name="inner">
+	        <bean id = "innerBean" class="..."/>
+	    </property>
+	</bean>
+    
+	<!-- more beans here please -->
+</beans>
