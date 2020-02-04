@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <!--  default-init-method = "init"  	 //sets default method for init across beans-->
+   <!-- default-destroy-method="destroy" //sets default method for destroy across beans-->
+   
+   <bean id = "helloBean" class = "com.tutorial.beanDefinition.HelloBean"  
+       init-method ="init" destroy-method="destroy" >
+       <!-- init-method= "init" // sets method for initilization (after constructor) -->
+       <!-- destroy-method = "destroy" // sets method for destruction (object cleanup) -->
+       <!-- lazy-init = "true"  // creates the bean only when requested-->
+       <!-- scope = "singleton" // only one instance of this bean will be created (Default) -->
+       <!-- scope = "prototype" // will create a new instance of this bean every time it is requested -->
+       
+       <!-- <constructor-arg name="message" value="Hello Bean!"/> -->
+       <property name="message" value="Hello Bean!"/>
+   </bean>
+   
+   <bean id = "singleton" class = "com.tutorial.beanDefinition.HelloBean">
+       <property name="message" value="I'm a singleton"/>
+   </bean>
+   
+   <bean id = "prototype" class = "com.tutorial.beanDefinition.HelloBean" scope = "prototype">
+       <property name="message" value="I'm a prototype"/>
+   </bean>
+   
+	<!-- more beans here please -->
+</beans>
