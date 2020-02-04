@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <!-- bean wired byName -->
+   <bean id="byName" class="com.tutorial.beanAutowiring.OuterClass" autowire = "byName">
+       <property name="message" value="Wired: byName"/>
+   </bean>
+    
+   <!-- bean wired byType -->
+   <bean id="byType" class="com.tutorial.beanAutowiring.OuterClass" autowire = "byType">
+       <property name="message" value="Wired: byType"/>
+   </bean>
+    
+   <!-- bean wired byConstructor -->
+   <bean id="byConstructor" class="com.tutorial.beanAutowiring.OuterClass" autowire = "constructor">
+       <constructor-arg value="Wired: constructor"/>
+   </bean>
+   
+   <!-- innerClass --> 
+   <bean id="inner" class="com.tutorial.beanAutowiring.InnerClass">
+       <property name="message" value="Inner Class Message"/>
+   </bean>
+   
+	<!-- more beans here please -->
+</beans>
