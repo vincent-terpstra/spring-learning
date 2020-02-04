@@ -1,4 +1,4 @@
-package com.tutorial;
+package com.tutorial.beanCollections;
 import java.util.*;
 
 public class JavaCollection {
