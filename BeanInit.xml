@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!-- Run using beanDefinition/InitHelloBean.main() -->
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <!--  default-init-method = "init"  	 //sets default method for init across beans-->
+   <!-- default-destroy-method="destroy" //sets default method for destroy across beans-->
+   
+   <bean id = "helloBean" class = "com.tutorial.beanDefinition.HelloBean"  
+       init-method ="init" destroy-method="destroy" >
+      <constructor-arg name="message" value="Inside Hello Bean!"/>
+   </bean>
+   
+   <bean class = "com.tutorial.beanDefinition.InitHelloBean"/>
+	<!-- more beans here please -->
+</beans>
