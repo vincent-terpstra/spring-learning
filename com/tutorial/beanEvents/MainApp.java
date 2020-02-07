@@ -14,6 +14,13 @@ public class MainApp {
 			
 			context.registerShutdownHook(); //ensure that destroy is called
 		/**/
+		System.out.println();
+			
+		CustomEventPublisher cvp = (CustomEventPublisher) context.getBean("customEventPublisher");
+		
+		cvp.publish();
+		cvp.publish();
+		
 		context.stop();
 	}
 }

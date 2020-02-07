@@ -13,5 +13,9 @@
    
    <bean id="contextStartEvent" class = "com.tutorial.beanEvents.ContextStartEvent"/>
    <bean id="contextStopEvent"  class = "com.tutorial.beanEvents.ContextStopEvent"/>
+	
+   <bean id = "customEventHandler" class = "com.tutorial.beanEvents.CustomEventHandler"/>
+   <bean id = "customEventPublisher" class = "com.tutorial.beanEvents.CustomEventPublisher"/>
 	<!-- more beans here please -->
+	
 </beans>
